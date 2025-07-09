@@ -19,7 +19,7 @@ ALUMNOS = {
         "nombre": "Bruno", 
         "apellido": "Martinez", 
         "edad": 23, 
-        "contraseña": "bm8754",
+        "contrasena": "bm8754",
         "materias_aprobadas": ["Matemática", "Estadística I", "Estadística II", "Introducción a la Economía", "Microeconomía"],
         "notas":[8, 9, 6, 10, 7]
         },   
@@ -27,7 +27,7 @@ ALUMNOS = {
         "nombre": "Santiago", 
         "apellido": "Saldivar", 
         "edad": 42, 
-        "contraseña": "sasa34",
+        "contrasena": "sasa34",
         "materias_aprobadas": ["Matemática", "Contabilidad", "Estadistica I", "Filosofía", "Estadística II", "Algebra I", "Estadística II","Microeconomía", "Macroeconomía"],
         "notas": [10, 9, 9, 10, 8, 9, 9, 8, 10]
         },
@@ -35,7 +35,7 @@ ALUMNOS = {
         "nombre": "Grisel", 
         "apellido": "Suarez", 
         "edad": 23, 
-        "contraseña": "897gri",
+        "contrasena": "897gri",
         "materias_aprobadas": ["Matemática", "Estadística I", "Introducción a la Economía", ],
         "notas": [6, 10, 7]
         },
@@ -43,7 +43,7 @@ ALUMNOS = {
         "nombre": "Elias", 
         "apellido": "Fernandez", 
         "edad": 28, 
-        "contraseña": "ferel31",
+        "contrasena": "ferel31",
         "materias_aprobadas": ["Matemática", "Microeconomía"],
         "notas":[5, 8]
         },
@@ -51,7 +51,7 @@ ALUMNOS = {
         "nombre": "Javier", 
         "apellido": "Gonzalez", 
         "edad": 31, 
-        "contraseña": "jg9806",
+        "contrasena": "jg9806",
         "materias_aprobadas": ["Matemática", "Estadística I", "Estadística II", "Filosofa", "Introducción a la Economía", "Microeconomía", "Derecho", "Administración"],
         "notas":[7, 8, 10, 6, 7, 7, 6, 9]
     },
@@ -61,6 +61,7 @@ ALUMNOS = {
 MATERIAS_DISPONIBLES = {
     "MAT": "Matemática",
     "ALI": "Álgebra I",
+    "ESTI": "Estadística I",
     "ESTII": "Estadística II",
     "MIE": "Microeconomía",
     "MAE": "Macroeconomía"

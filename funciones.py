@@ -14,7 +14,7 @@ def agregar_nota(usuario, materia, nota, alumnos_db):
     registro = {
         "materia": materia,
         "nota": nota,
-        "fecha": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Formato: AAAA-MM-DD HH:MM:SS
+        "fecha": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")  
     }
     
     alumnos_db[usuario]["notas"].append(registro)
@@ -28,3 +28,11 @@ def verificar_contrasena(usuario, contrasena):
     """Valida las credenciales de acceso"""
     alumno = obtener_alumno(usuario)
     return alumno and alumno["contrasena"] == contrasena
+
+def calcular_promedio(usuario, alumnos_db):
+    """Calcula el promedio de un alumno"""
+    if usuario not in alumnos_db:
+        raise KeyError(f"Usuario {usuario} no existe")
+    
+    notas = [registro["nota"] for registro in alumnos_db[usuario]["notas"]]
+    return sum(notas) / len(notas) if notas else 0
