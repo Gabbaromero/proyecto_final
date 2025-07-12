@@ -1,3 +1,6 @@
 venv/
 __pycache__/
 *.pyc
+
+datos_alumnos.json
+backup/
