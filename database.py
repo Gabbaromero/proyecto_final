@@ -1,3 +1,12 @@
+"""
+Módulo de persistencia de datos académicos.
+
+Contiene:
+- Estructuras de datos (alumnos, materias, turnos)
+- Validación de datos
+- Funciones para guardar/cargar en JSON
+"""
+
 import json
 
 

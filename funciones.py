@@ -1,3 +1,12 @@
+"""
+Módulo de funciones académica.
+
+Responsable de:
+- Operaciones con notas y promedios
+- Autenticación de usuarios
+- Registro de alumnos
+"""
+
 import datetime
 from database import ALUMNOS, validar_alumno
 

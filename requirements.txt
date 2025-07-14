@@ -1,0 +1,3 @@
+- Este proyecto no requiere de librerias externas adicionales.
+
+- Python 3.8+
