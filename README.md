@@ -1,20 +1,44 @@
-# Sistema Academico
+# Sistema Académico
 
-Este es un sistema de gestión académica desarrollado
+Sistema de gestión para instituciones educativas que permite administrar alumnos, materias y calificaciones.
 
-## Funcionalidades
+## 🗂️ Estructura del proyecto
+proyecto_final/
+├── database.py    # Maneja almacenamiento en JSON
+├── funciones.py   # Contiene las operaciones académicas
+└── main.py        # Punto de entrada del sistema
 
-- Registro de alumnos
-- Gestión de notas por materia
-- Cálculo de promedios
-- Persistencia de datos en archivo JSON
+## 🚀 Funcionalidades principales
 
-## Requisitos
+- **Alumnos**:
+  - Registro con validación de datos
+  - Autenticación por usuario/contraseña
+  - Consulta de información académica
 
-- Python 3.8+
-- No se requieren librerias externas
+- **Notas**:
+  - Registro de calificaciones (1-10)
+  - Cálculo de promedios
+  - Historial por materia
 
-## Instalación
+- **Datos**:
+  - Persistencia en archivo JSON
+  - Carga automática al iniciar
+  - Copia de seguridad al salir
 
-1. Clonar el repositorio:
-   ```bash https://github.com/Gabbaromero/proyecto_final.git
+## 📋 Requisitos
+
+  - Python 3.8 o superior
+  - No se requieren librerías externas
+
+## 🛠️ Instalación
+
+1. **Clonar repositorio**:
+   ```bash
+   git clone https://github.com/Gabbaromero/proyecto_final.git
+   cd proyecto_final
+
+   crear y activar el entorno virtual: 
+   python -m venv venv
+        Windows:
+         bash 
+venv\Scripts\activate
