@@ -92,14 +92,46 @@ ARCHIVO_ALUMNOS = "alumnos.json"
 
 def validar_alumno(usuario, nombre, apellido, edad, contrasena):
     """Valida los datos de un alumno antes de registrarlo"""
+    if not isinstance(usuario, str):
+        raise TypeError(f"El usuario debe ser una cadena de texto (se recibió {type(usuario)})")
+    if len(usuario) < 4:
+        raise ValueError("El usuario debe tener al menos 4 caracteres")
+    if usuario in ALUMNOS:
+        raise ValueError("El usuario ya existe")
+    if not usuario.isalnum():
+        raise ValueError("El usuario solo puede contener letras y números")
+    
+    if not isinstance(nombre, str):
+        raise TypeError(f"El usuario debe ser una cadena de texto (se recibió {type(nombre)})")
+    if len(nombre.strip()) < 2:
+        raise ValueError("El nombre debe tener al menos 2 caracteres")
+    if not nombre.replace(" ", "").isalpha():
+        raise ValueError("El nombre solo puede contener letras y espacios")
+    
+    if not isinstance(apellido, str):
+        raise TypeError(f"El apellido debe ser una cadena de texto (se recibió {type(apellido)})")
+    if len(apellido.strip()) < 2:
+        raise ValueError("El apellido debe tener al menos 2 caracteres")
+    if not apellido.replace(" ", "").isalpha():
+        raise ValueError("El apellido solo puede contener letras y espacios")
+    
     if not isinstance(edad, int):
         raise TypeError(f"La edad debe ser un número entero (se recibió "
                       f"{type(edad)})")
-    if edad < 0:
-            raise ValueError("La edad no puede ser negativa")
+    if edad < 17:
+            raise ValueError("La edad minima es 17")
     if edad > 100:
         raise ValueError("Edad inválida: demasiado alta")
-
+    
+    if not isinstance(contrasena, str):
+        raise TypeError(f"La contraseña debe ser una cadena de texto (se recibió {type(contrasena)})")
+    if len(contrasena) < 6:
+        raise ValueError("La contraseña debe tener al menos 6 caracteres")
+    if " " in contrasena:
+        raise ValueError("La contraseña no puede contener espacios")
+    
+    
+    
 
 def guardar_alumnos():
     """Guarda los datos de los alumnos en un archivo JSON"""
@@ -121,3 +153,15 @@ def cargar_alumnos():
     except json.JSONDecodeError:
         print("Error leyendo el archivo, empezando con datos vacíos")
         ALUMNOS = {}
+
+def listar_materias():
+    """
+    Devuelve todas las materias disponibles en formato legible.
+    """
+    if not MATERIAS_DISPONIBLES:
+        return "No hay materias registradas"
+    
+    resultado = "Materias disponibles:\n"
+    for codigo, nombre in MATERIAS_DISPONIBLES.items():
+        resultado += f"- {codigo}: {nombre}\n"
+    return resultado

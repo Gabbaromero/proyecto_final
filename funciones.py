@@ -19,7 +19,22 @@ def agregar_nota(usuario, materia, nota, alumnos_db):
     }
     alumnos_db[usuario]["notas"].append(registro)
     return True
+def listar_alumnos(alumnos_db):
+    """
+    Lista todos los alumnos registrados en formato legible.
 
+    """
+    try:
+        if not alumnos_db:
+            return "No hay alumnos registrados"
+        
+        lista = "\nLista de alumnos:\n"
+        for usuario, datos in alumnos_db.items():
+            lista += f"- {datos['nombre']} {datos['apellido']} (Usuario: {usuario})\n"
+        return lista
+    
+    except Exception as e:
+        return f"Error al listar alumnos: {str(e)}"
 
 def obtener_alumno(usuario):
     """Devuelve los datos de un alumno específico"""
